@@ -1,2 +1,0 @@
-# ReactNotes
-self Made Notes
