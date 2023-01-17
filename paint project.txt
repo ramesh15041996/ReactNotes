@@ -1,0 +1,45 @@
+import React from "react";
+//For Importing CSS, you only need to give path of CSS File
+import "./App.css";
+class App extends React.Component {
+  //Class will always have a render function
+  //State Variables
+  constructor() {
+    super();
+    //State is always an object
+    this.state = {
+      products: ["Shoes", "TShirts", "Pants"],
+      selectedColor: "red",
+    };
+  }
+
+  render() {
+    const colors = ["red", "yellow", "green", "blue", "pink"];
+    //return Whatever you want to show on the screen
+    return (
+      <div
+        style={{ height: "100vh", backgroundColor: this.state.selectedColor }}
+      >
+        {/* first Curly Brace Tells That you are writing JS and then in second one you pass an object */}
+        <div className="color-container" style={{ display: "flex" }}>
+          {colors.map((color) => {
+            return (
+              <div
+                className="color"
+                style={{ backgroundColor: color }}
+                onClick={() => {
+                  this.setState({
+                    selectedColor: color,
+                  });
+                }}
+              ></div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+}
+
+// export default App;
+export default App;
